@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KeuanganKu - Manajer Keuangan</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- Bagian: Header -->
+    <header class="header">
+        <h1>Selamat Datang, User!</h1>
+        <p>Lacak transaksi harian dan investasimu di sini.</p>
+    </header>
+
+    <!-- Bagian: Navigasi Tab -->
+    <nav class="tab-nav">
+        <button class="tab-btn active" id="tab-keuangan">Transaksi Harian</button>
+        <button class="tab-btn" id="tab-investasi" onclick="window.location.href='investasi.html'">Investasi
+            Saham</button>
+    </nav>
+
+    <!-- Bagian: Ringkasan Bulanan -->
+    <section class="summary">
+        <div class="card">
+            <h3>Total Pemasukan</h3>
+            <p id="total-pemasukan">Rp 0</p>
+            <span>Bulan ini</span>
+        </div>
+        <div class="card">
+            <h3>Total Pengeluaran</h3>
+            <p id="total-pengeluaran">Rp 0</p>
+            <span>Bulan ini</span>
+        </div>
+        <div class="card">
+            <h3>Saldo</h3>
+            <p id="total-saldo">Rp 0</p>
+            <span>Total saldo saat ini</span>
+        </div>
+    </section>
+
+    <!-- Bagian: Tombol Tambah Transaksi -->
+    <div class="action-bar">
+        <button id="btn-tambah-transaksi" class="btn-primary">+ Tambah Transaksi</button>
+    </div>
+
+    <!-- Bagian: Laporan Pengeluaran (Pie Chart Placeholder) -->
+    <section class="report">
+        <h3>Laporan Pengeluaran</h3>
+        <div id="pie-chart" class="chart-placeholder">[Grafik di sini]</div>
+    </section>
+
+    <!-- Bagian: Riwayat Transaksi -->
+    <section class="history">
+        <h3>Riwayat Transaksi</h3>
+
+        <!-- Filter -->
+        <div class="filters">
+            <input type="text" id="search-deskripsi" placeholder="Cari deskripsi..." />
+            <input type="date" id="filter-tanggal" />
+            <select id="filter-kategori">
+                <option value="">Semua...</option>
+                <option value="Gaji">Gaji</option>
+                <option value="Transportasi">Transportasi</option>
+                <option value="Makan">Makan</option>
+                <!-- Tambahkan kategori lain jika perlu -->
+            </select>
+        </div>
+
+        <!-- Tabel Riwayat -->
+        <table class="tabel-transaksi">
+            <thead>
+                <tr>
+                    <th>Tanggal</th>
+                    <th>Kategori</th>
+                    <th>Deskripsi</th>
+                    <th>Jumlah</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody id="tabel-riwayat">
+                <!-- Baris transaksi akan ditambahkan via JavaScript -->
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Modal Tambah Transaksi (akan dibuat terpisah) -->
+    <div id="modal-transaksi" class="modal hidden">
+        <!-- Diisi oleh file modal-transaksi.html -->
+        <!-- Bagian: Modal Tambah Transaksi -->
+        <div class="modal-content" id="form-transaksi">
+        
+            <!-- Header Modal -->
+            <div class="modal-header">
+                <h2>Tambah Transaksi Baru</h2>
+                <button id="tutup-modal" class="close-btn">&times;</button>
+            </div>
+        
+            <!-- Tab Toggle Pemasukan / Pengeluaran -->
+            <div class="transaksi-type-toggle">
+                <button id="btn-pengeluaran" class="toggle-btn active">Pengeluaran</button>
+                <button id="btn-pemasukan" class="toggle-btn">Pemasukan</button>
+            </div>
+        
+            <!-- Form Tambah Transaksi -->
+            <form id="form-tambah-transaksi" class="form-transaksi">
+                <input type="hidden" id="tipe-transaksi" value="pengeluaran" />
+        
+                <!-- Input Jumlah -->
+                <div class="form-group">
+                    <label for="jumlah">Jumlah</label>
+                    <input type="number" id="jumlah" placeholder="Masukkan jumlah (Rp)" required />
+                </div>
+        
+                <!-- Dropdown Kategori -->
+                <div class="form-group">
+                    <label for="kategori">Kategori</label>
+                    <select id="kategori" required>
+                        <option value="">Pilih Kategori</option>
+                        <option value="Gaji">Gaji</option>
+                        <option value="Makan">Makan</option>
+                        <option value="Transportasi">Transportasi</option>
+                        <option value="Belanja">Belanja</option>
+                        <option value="Lainnya">Lainnya</option>
+                    </select>
+                </div>
+        
+                <!-- Tanggal -->
+                <div class="form-group">
+                    <label for="tanggal">Tanggal</label>
+                    <input type="date" id="tanggal" required />
+                </div>
+        
+                <!-- Deskripsi -->
+                <div class="form-group">
+                    <label for="deskripsi">Deskripsi</label>
+                    <input type="text" id="deskripsi" placeholder="Contoh: Gaji bulan Juli" required />
+                </div>
+        
+                <!-- Tombol Simpan -->
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">Simpan</button>
+                </div>
+            </form>
+        
+        </div>
+
+    </div>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+
+</html>

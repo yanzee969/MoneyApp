@@ -1,0 +1,257 @@
+/* ====== RESET & DASAR ====== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+h1,
+h2,
+h3 {
+    color: #222;
+}
+
+/* ====== HEADER ====== */
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 24px;
+}
+
+.header p {
+    color: #666;
+}
+
+/* ====== TAB NAVIGASI ====== */
+.tab-nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    padding: 10px 20px;
+    background-color: #e2e6ea;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.tab-btn.active {
+    background-color: #007bff;
+    color: white;
+}
+
+/* ====== RINGKASAN KARTU ====== */
+.summary {
+    display: flex;
+    gap: 15px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    flex: 1;
+    min-width: 200px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* ====== TOMBOL AKSI ====== */
+.action-bar {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: #218838;
+}
+
+/* ====== CHART PLACEHOLDER ====== */
+.chart-placeholder {
+    background-color: #dee2e6;
+    height: 200px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6c757d;
+    margin: 10px 0 30px;
+}
+
+/* ====== TABEL & FILTER ====== */
+.filters {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 10px 0 10px;
+}
+
+.filters input,
+.filters select {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.tabel-transaksi {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.tabel-transaksi th,
+.tabel-transaksi td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.tabel-transaksi th {
+    background-color: #f1f3f5;
+}
+
+/* ====== MODAL UMUM ====== */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 25px;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+/* ====== MODAL HEADER ====== */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.modal-header h2 {
+    font-size: 20px;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #999;
+}
+
+/* ====== FORM ====== */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+/* ====== TOGGLE TRANSAKSI ====== */
+.transaksi-type-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px 0 20px;
+}
+
+.toggle-btn {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    background-color: #f8f9fa;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.toggle-btn.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+/* ====== FORM ACTION ====== */
+.form-actions {
+    text-align: right;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 600px) {
+    .summary {
+        flex-direction: column;
+    }
+
+    .filters {
+        flex-direction: column;
+    }
+}
